@@ -8,6 +8,12 @@ function parseaParams(argv): ContactsControllerOptions {
   };
 }
 
-function main() {}
+function main() {
+  const controller = new ContactsController();
+  //console.log(controller.contacts.getAll());
+  const options = parseaParams(process.argv);
+  const result = controller.processOptions(options);
+  console.log(result);
+}
 
 main();
